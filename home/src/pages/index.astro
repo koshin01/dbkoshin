@@ -2,7 +2,21 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import ImapactParagraph from "../components/ImapactParagraph.astro";
+import List from "../components/List";
+import ScrollDownArrow from "../components/ScrollDownArrow.tsx";
+import {
+	MY_PROCUCTS,
+	MY_RECOMMENDS,
+	MY_TECH_WORDS,
+	SITE_DESCRIPTION,
+	SITE_TITLE,
+} from "../consts";
+
+const { earthMovie = "/earth.gif" } = Astro.props;
+
+const today = new Date();
+const currentYear = today.getFullYear();
 ---
 
 <!doctype html>
@@ -12,38 +26,64 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="flex flex-col p-7">
+			<h1 class="sr-only h-0">This page introduces koshin's activities and thoughts.</h1>
+			<section class="text-center h-screen">
+				<h2 class="font-bold text-5xl text-slate-900 leading-normal font-serif">
+					Hello <br />
+					 <img 
+					 src={earthMovie} 
+					 class="w-12 mx-auto"
+					 alt="The spinning clay earth." 
+					 />
+					I'm Software enginner <br />
+					in Tokyo
+				</h2>
+				<ScrollDownArrow client:load />
+			</section>
+			<section class="flex flex-col gap-10 text-center">
+				<ImapactParagraph>
+					Let me tell you why I got this job.
+				</ImapactParagraph>
+				<ImapactParagraph>
+					I started dreaming after watching a certain drama.
+				</ImapactParagraph>
+				<ImapactParagraph>
+					The drama "Silicon Valley" changed the way I think about work.
+				</ImapactParagraph>
+				<ImapactParagraph>
+					I have yet to achieve spectacular results, but I believe I can do something good through this work.
+				</ImapactParagraph>
+			</section>
+			<section class="flex flex-col gap-4 mt-20">
+				<h3 class="text-slate-500">
+					Look at what I designed
+				</h3>
+				<List items={MY_PROCUCTS} />
+			</section>
+			<section class="flex flex-col gap-4 mt-20">
+				<h3 class="text-slate-500">
+					Let me tell you what I like
+				</h3>
+				<List items={MY_RECOMMENDS} />
+			</section>
+			<section class="flex flex-col gap-4 mt-20">
+				<h3 class="text-slate-500">
+					Let me say tech words that I often say
+				</h3>
+				<List items={MY_TECH_WORDS} />
+			</section>
+			<section class="flex flex-col gap-4 mt-20">
+				<h3 class="text-slate-500">
+					Finally, my career
+				</h3>
+				<p class = "px-2 text-slate-950">
+					{currentYear - 2021} years ago, I moved from Hyogo to Tokyo.
+					From there I worked part time and studied Java for 6 months at a vocational training school.
+					{currentYear - 2022} years ago I become a full time server side enginner for the first time,
+					and now I'm working develping SaaS for my second company.
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>
