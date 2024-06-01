@@ -1,9 +1,11 @@
 ---
 import HomeLink from "./HomeLink.astro";
+import HamburgerMenu from "./SideMenu.tsx";
 ---
 
 <header class="p-4">
-	<nav>
+	<nav class="flex justify-between">
 		<HomeLink />
+		<HamburgerMenu client:load />
 	</nav>
 </header>

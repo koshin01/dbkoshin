@@ -11,7 +11,7 @@ interface Image {
 
 interface Item {
 	name: string;
-	description: string;
+	description: string | Date;
 	icon?: Image;
 	contentUrl?: string;
 }
@@ -57,10 +57,10 @@ export const MY_RECOMMENDS: Item[] = [
 		description: "Films I love",
 	},
 	{
-		name: "\"Think different\"",
+		name: '"Think different"',
 		description: "I love Apple, and sprits",
 	},
-    {
+	{
 		name: "Yoasobi",
 		description: "Star of our generation",
 	},
@@ -74,5 +74,12 @@ export const MY_TECH_WORDS: Item[] = [
 	{
 		name: "Blockchain",
 		description: "Will my efforts be rewarded ??",
+	},
+];
+
+export const NOTIFICATIONS: Item[] = [
+	{
+		name: "🎉 This is public !",
+		description: new Date(2024, 5, 2),
 	},
 ];

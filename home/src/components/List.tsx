@@ -7,7 +7,7 @@ interface Image {
 
 interface Item {
 	name: string;
-	description: string;
+	description: string | Date;
 	icon?: Image;
 	contentUrl?: string;
 }
@@ -16,7 +16,7 @@ interface Props {
 	items: Item[];
 }
 
-const UnorderedList: FC<Props> = (props) => {
+const List: FC<Props> = (props) => {
 	return (
 		<ul className="flex flex-col gap-6">
 			{props.items.map((item) => (
@@ -40,7 +40,13 @@ const UnorderedList: FC<Props> = (props) => {
 							<span className="font-semibold text-slate-800 text-2xl">
 								{item.name}
 							</span>
-							<span className="text-slate-500">{item.description}</span>
+							{typeof item.description === "string" ? (
+								<span className="text-slate-500">{item.description}</span>
+							) : (
+								<time className="text-slate-500">
+									{`${item.description.getFullYear()}/${item.description.getMonth()}/${item.description.getDate()}`}
+								</time>
+							)}
 						</div>
 					</a>
 				</li>
@@ -49,4 +55,4 @@ const UnorderedList: FC<Props> = (props) => {
 	);
 };
 
-export default UnorderedList;
+export default List;
