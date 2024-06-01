@@ -26,7 +26,7 @@ const currentYear = today.getFullYear();
 	</head>
 	<body>
 		<Header />
-		<main class="flex flex-col p-7">
+		<main class="flex flex-col p-7 gap-10 md:px-40">
 			<h1 class="sr-only h-0">This page introduces koshin's activities and thoughts.</h1>
 			<section class="text-center h-screen">
 				<h2 class="font-bold text-5xl text-slate-900 leading-normal font-serif">
@@ -55,25 +55,25 @@ const currentYear = today.getFullYear();
 					I have yet to achieve spectacular results, but I believe I can do something good through this work.
 				</ImapactParagraph>
 			</section>
-			<section class="flex flex-col gap-4 mt-20">
+			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
 					Look at what I designed
 				</h3>
 				<List items={MY_PROCUCTS} />
 			</section>
-			<section class="flex flex-col gap-4 mt-20">
+			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
 					Let me tell you what I like
 				</h3>
 				<List items={MY_RECOMMENDS} />
 			</section>
-			<section class="flex flex-col gap-4 mt-20">
+			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
 					Let me say tech words that I often say
 				</h3>
 				<List items={MY_TECH_WORDS} />
 			</section>
-			<section class="flex flex-col gap-4 mt-20">
+			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
 					Finally, my career
 				</h3>
