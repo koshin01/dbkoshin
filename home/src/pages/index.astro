@@ -1,9 +1,11 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ImapactParagraph from "../components/ImapactParagraph.astro";
 import List from "../components/List";
+import Main from "../components/Main.astro";
 import ScrollDownArrow from "../components/ScrollDownArrow.tsx";
 import {
 	MY_PROCUCTS,
@@ -22,18 +24,18 @@ const currentYear = today.getFullYear();
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE.ROOT} description={SITE_DESCRIPTION.ROOT} />
 	</head>
-	<body>
+	<Body>
 		<Header />
-		<main class="flex flex-col p-7 gap-10 md:px-40">
+		<Main>
 			<h1 class="sr-only h-0">This page introduces koshin's activities and thoughts.</h1>
 			<section class="text-center h-screen">
-				<h2 class="font-bold text-5xl text-slate-900 leading-normal font-serif">
+				<h2 class="font-bold text-5xl lg:text-5xl text-slate-900 leading-normal font-serif my-0">
 					Hello <br />
 					 <img 
 					 src={earthMovie} 
-					 class="w-12 mx-auto"
+					 class="w-12 mx-auto my-0 lg:my-4"
 					 alt="The spinning clay earth." 
 					 />
 					I'm Software enginner <br />
@@ -84,7 +86,7 @@ const currentYear = today.getFullYear();
 					and now I'm working develping SaaS for my second company.
 				</p>
 			</section>
-		</main>
+		</Main>
 		<Footer />
-	</body>
+	</Body>
 </html>

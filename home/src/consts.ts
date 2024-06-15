@@ -1,15 +1,23 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "dbkoshin";
-export const SITE_DESCRIPTION = "koshin's homepage";
+export type Pages = "ROOT" | "BLOG";
 
-interface Image {
+export const SITE_TITLE: Record<Pages, string> = {
+	ROOT: "Home | dbkoshin",
+	BLOG: "Blog | dbkoshin",
+};
+export const SITE_DESCRIPTION: Record<Pages, string> = {
+	ROOT: "koshin's homepage.",
+	BLOG: "koshin's tech blog.",
+};
+
+export interface Image {
 	src: string;
 	alt: string;
 }
 
-interface Item {
+export interface Item {
 	name: string;
 	description: string | Date;
 	icon?: Image;
@@ -21,7 +29,7 @@ export const MY_PROCUCTS: Item[] = [
 		name: "Blog",
 		description: "My tech blog",
 		icon: { src: "/coffee.png", alt: "Smile in a cup with coffee." },
-		contentUrl: "https://blog.dbkoshin.com",
+		contentUrl: "/blog",
 	},
 	{
 		name: "HAKUSHIKI",
