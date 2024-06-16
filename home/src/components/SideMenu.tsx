@@ -28,7 +28,7 @@ const SideMenu = () => {
 				<img src="/notifications.svg" alt="Shape of Bell" />
 			</button>
 			<div
-				className={`flex flex-col gap-7 fixed right-0 top-0 p-4 z-20 bg-gray-50 w-4/5 h-screen transition-transform duration-700 ease-in-out transform ${
+				className={`flex flex-col gap-7 fixed right-0 top-0 p-4 z-20 bg-gray-50 w-4/5 lg:w-1/4 h-screen transition-transform duration-700 ease-in-out transform ${
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 				id="navbar-notices"
