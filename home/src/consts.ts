@@ -19,7 +19,7 @@ export interface Image {
 
 export interface Item {
 	name: string;
-	description: string | Date;
+	description?: string;
 	icon?: Image;
 	contentUrl?: string;
 }
@@ -27,20 +27,20 @@ export interface Item {
 export const MY_PROCUCTS: Item[] = [
 	{
 		name: "Blog",
-		description: "My tech blog",
+		description: "Tech blog",
 		icon: { src: "/coffee.png", alt: "Smile in a cup with coffee." },
 		contentUrl: "/blog",
 	},
-	{
-		name: "HAKUSHIKI",
-		description: "AI chat bot on Discord",
-		icon: {
-			src: "/hakushiki.jpeg",
-			alt: "Friendly robots smiling in futuristic spaces.",
-		},
-		contentUrl:
-			"https://koshin01.notion.site/HAKUSHIKI-67268f66bf6744b4b0618a25a27e28c2",
-	},
+	// {
+	// 	name: "HAKUSHIKI",
+	// 	description: "AI chat bot on Discord",
+	// 	icon: {
+	// 		src: "/hakushiki.jpeg",
+	// 		alt: "Friendly robots smiling in futuristic spaces.",
+	// 	},
+	// 	contentUrl:
+	// 		"https://koshin01.notion.site/HAKUSHIKI-67268f66bf6744b4b0618a25a27e28c2",
+	// },
 	{
 		name: "DBoard",
 		description: "BBS on blockchain",
@@ -58,19 +58,12 @@ export const MY_PROCUCTS: Item[] = [
 export const MY_RECOMMENDS: Item[] = [
 	{
 		name: "Silicon Valley",
-		description: "Recommended for who came here",
+		description: "I watch series many times",
+		contentUrl: "https://www.hbo.com/silicon-valley",
 	},
 	{
 		name: "3 idiots",
-		description: "Films I love",
-	},
-	{
-		name: '"Think different"',
-		description: "I love Apple, and sprits",
-	},
-	{
-		name: "Yoasobi",
-		description: "Star of our generation",
+		description: "Films",
 	},
 ];
 
@@ -80,14 +73,25 @@ export const MY_TECH_WORDS: Item[] = [
 		description: "Especially Extreme Programming",
 	},
 	{
-		name: "Blockchain",
-		description: "Will my efforts be rewarded ??",
+		name: "AI",
+		description: "ChatGPT surprised me!",
+	},
+];
+
+export const MY_LINKS: Item[] = [
+	{
+		name: "GitHub",
+		contentUrl: "https://github.com/koshin01",
+	},
+	{
+		name: "X",
+		contentUrl: "https://x.com/koshin2001",
 	},
 ];
 
 export const NOTIFICATIONS: Item[] = [
 	{
-		name: "🎉 This is public !",
-		description: new Date(2024, 5, 2),
+		name: "🎉 Hello World !",
+		description: "2024/09/01",
 	},
 ];

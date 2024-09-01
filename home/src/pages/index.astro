@@ -3,11 +3,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import ImapactParagraph from "../components/ImapactParagraph.astro";
 import List from "../components/List";
 import Main from "../components/Main.astro";
 import ScrollDownArrow from "../components/ScrollDownArrow.tsx";
 import {
+	MY_LINKS,
 	MY_PROCUCTS,
 	MY_RECOMMENDS,
 	MY_TECH_WORDS,
@@ -43,45 +43,29 @@ const currentYear = today.getFullYear();
 				</h2>
 				<ScrollDownArrow client:load />
 			</section>
-			<section class="flex flex-col gap-10 text-center">
-				<ImapactParagraph>
-					Let me tell you why I got this job.
-				</ImapactParagraph>
-				<ImapactParagraph>
-					I started dreaming after watching a certain drama.
-				</ImapactParagraph>
-				<ImapactParagraph>
-					The drama "Silicon Valley" changed the way I think about work.
-				</ImapactParagraph>
-				<ImapactParagraph>
-					I have yet to achieve spectacular results, but I believe I can do something good through this work.
-				</ImapactParagraph>
-			</section>
-			<section class="flex flex-col gap-4">
+			<section class="flex flex-col">
 				<h3 class="text-slate-500">
-					Look at what I designed
+					Designed by me
 				</h3>
 				<List items={MY_PROCUCTS} />
-			</section>
-			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
-					Let me tell you what I like
+					Favorite
 				</h3>
 				<List items={MY_RECOMMENDS} />
-			</section>
-			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
-					Let me say tech words that I often say
+					Focus
 				</h3>
 				<List items={MY_TECH_WORDS} />
-			</section>
-			<section class="flex flex-col gap-4">
 				<h3 class="text-slate-500">
-					Finally, my career
+					Link
+				</h3>
+				<List items={MY_LINKS} />
+				<h3 class="text-slate-500">
+					Story
 				</h3>
 				<p class = "px-2 text-slate-950">
 					{currentYear - 2021} years ago, I moved from Hyogo to Tokyo.
-					From there I worked part time and studied Java for 6 months at a vocational training school.
+					From there I worked part time and studied Java for 6 months at school.
 					{currentYear - 2022} years ago I become a full time server side enginner for the first time,
 					and now I'm working develping SaaS for my second company.
 				</p>
