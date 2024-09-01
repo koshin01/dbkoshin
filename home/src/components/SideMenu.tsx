@@ -44,14 +44,14 @@ const SideMenu = () => {
 					<span className="sr-only">Close side menu</span>
 					<img src="/close.svg" alt="Shape of close" />
 				</button>
-				<section className="flex flex-col gap-4">
-					<h3 className="text-slate-500">Notices from Koshin</h3>
+				<section className="flex flex-col">
+					<h3 className="text-slate-500">Notices</h3>
 					<List items={NOTIFICATIONS} />
 				</section>
-				<section className="flex flex-col gap-4">
+				{/* <section className="flex flex-col gap-4">
 					<h3 className="text-slate-500">Would you like to be notified?</h3>
-					<Toggle />
-				</section>
+					<Toggle checked={false} onChange={() => 0}/>
+				</section> */}
 			</div>
 		</>
 	);

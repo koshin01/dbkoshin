@@ -3,19 +3,14 @@ import { useEffect, useState } from "react";
 const ScrollDownArrow = () => {
 	const [isHiidenArrow, setIsHiidenArrow] = useState(false);
 
-	const handleScroll = () => {
-		if (window.scrollY > 30) {
-			setIsHiidenArrow(true);
-		}
-	};
-
 	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
+		const handleScroll = () => setIsHiidenArrow(window.scrollY > 30);
 
+		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, [handleScroll]);
+	}, []);
 
 	return (
 		<div
