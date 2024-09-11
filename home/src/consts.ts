@@ -87,6 +87,10 @@ export const MY_LINKS: Item[] = [
 		name: "X",
 		contentUrl: "https://x.com/koshin2001",
 	},
+	{
+		name: "Wantedly",
+		contentUrl: "https://www.wantedly.com/id/koshin2001",
+	}
 ];
 
 export const NOTIFICATIONS: Item[] = [
