@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import Anchor from "./Anchor";
 
 interface Image {
 	src: string;
@@ -21,14 +22,12 @@ const List: FC<Props> = (props) => {
 		<ul className="flex flex-col gap-6 list-none p-0 m-0 lg:p-0 lg:m-0">
 			{props.items.map((item) => (
 				<li key={item.name} className="flex gap-4">
-					<a
+					<Anchor
 						href={item.contentUrl}
-						target={item.contentUrl?.startsWith("/") ? "_self" : "_blank"}
 						className={`flex items-center p-4 no-underline w-full ${
 							item.contentUrl &&
 							"justify-between border-2 border-gray-100 hover:bg-gray-100/50 rounded-xl lg:p-4"
 						}`}
-						rel="noreferrer"
 					>
 						<div className="flex items-center gap-7">
 							{item.icon && (
@@ -48,7 +47,7 @@ const List: FC<Props> = (props) => {
 							</div>
 						</div>
 						{item.contentUrl && <div>🔗</div>}
-					</a>
+					</Anchor>
 				</li>
 			))}
 		</ul>
