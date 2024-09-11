@@ -49,7 +49,7 @@ export const MY_PROCUCTS: Item[] = [
 	},
 	{
 		name: "WEBIII MOSHI",
-		description: "Quiz app of Web3",
+		description: "Quiz of Web3",
 		icon: { src: "/webiii_moshi.png", alt: "Greek numeral 3." },
 		contentUrl: "https://webiiimoshi.dbkoshin.com",
 	},

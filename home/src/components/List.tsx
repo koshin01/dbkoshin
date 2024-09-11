@@ -14,12 +14,14 @@ interface Item {
 }
 
 interface Props {
+	title?: string;
 	items: Item[];
 }
 
 const List: FC<Props> = (props) => {
 	return (
-		<ul className="flex flex-col gap-6 list-none p-0 m-0 lg:p-0 lg:m-0">
+		<ul className="flex flex-col list-none p-0 m-0 lg:p-0 lg:m-0">
+			{props.title && <h3 className="text-slate-500">{props.title}</h3>}
 			{props.items.map((item) => (
 				<li key={item.name} className="flex gap-4">
 					<Anchor

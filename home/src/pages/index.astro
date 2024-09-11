@@ -43,32 +43,22 @@ const currentYear = today.getFullYear();
 				</h2>
 				<ScrollDownArrow client:load />
 			</section>
-			<section class="flex flex-col">
-				<h3 class="text-slate-500">
-					Designed by me
-				</h3>
-				<List items={MY_PROCUCTS} />
-				<h3 class="text-slate-500">
-					Favorite
-				</h3>
-				<List items={MY_RECOMMENDS} />
-				<h3 class="text-slate-500">
-					Focus
-				</h3>
-				<List items={MY_TECH_WORDS} />
-				<h3 class="text-slate-500">
-					Link
-				</h3>
-				<List items={MY_LINKS} />
-				<h3 class="text-slate-500">
-					Story
-				</h3>
-				<p class = "px-2 text-slate-950">
-					{currentYear - 2021} years ago, I moved from Hyogo to Tokyo.
-					From there I worked part time and studied Java for 6 months at school.
-					{currentYear - 2022} years ago I become a full time server side enginner for the first time,
-					and now I'm working develping SaaS for my second company.
-				</p>
+			<section class="flex flex-col gap-4">
+				<List title="🤯 Designed by me" items={MY_PROCUCTS} />
+				<List title="🤩 Favorite" items={MY_RECOMMENDS} />
+				<List title="🤗 Love tech" items={MY_TECH_WORDS} />
+				<List title="👋 Links" items={MY_LINKS} />
+				<div>
+					<h3 class="text-slate-500">
+						😆 Story
+					</h3>
+					<p class = "px-2 text-slate-950">
+						{currentYear - 2021} years ago, I moved from Hyogo to Tokyo.
+						From there I worked part time and studied Java for 6 months at school.
+						{currentYear - 2022} years ago I become a full time server side enginner for the first time,
+						and now I'm working develping SaaS for my second company.
+					</p>
+				</div>
 			</section>
 		</Main>
 		<Footer />
