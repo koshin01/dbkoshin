@@ -24,9 +24,9 @@ const List: FC<Props> = (props) => {
 				<li key={item.name} className="flex gap-4">
 					<Anchor
 						href={item.contentUrl}
-						className={`flex items-center p-4 no-underline w-full ${
+						className={`flex items-center no-underline w-full px-4 py-1 ${
 							item.contentUrl &&
-							"justify-between border-2 border-gray-100 hover:bg-gray-100/50 rounded-xl lg:p-4"
+							"justify-between hover:bg-gray-100/50 rounded-xl group"
 						}`}
 					>
 						<div className="flex items-center gap-7">
@@ -46,7 +46,13 @@ const List: FC<Props> = (props) => {
 								)}
 							</div>
 						</div>
-						{item.contentUrl && <div>🔗</div>}
+						{item.contentUrl && (
+							<img 
+								src="/chevron_right.svg" 
+								alt="Shape of right arrow"
+								className="transition ease-in-out group-hover:-translate-x-2 duration-300"
+							 />
+						)}
 					</Anchor>
 				</li>
 			))}
