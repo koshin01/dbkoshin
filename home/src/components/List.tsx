@@ -21,12 +21,12 @@ interface Props {
 const List: FC<Props> = (props) => {
 	return (
 		<ul className="flex flex-col list-none p-0 m-0 lg:p-0 lg:m-0">
-			{props.title && <h3 className="text-slate-500">{props.title}</h3>}
+			{props.title && <h3 className="text-gray-500">{props.title}</h3>}
 			{props.items.map((item) => (
-				<li key={item.name} className="flex gap-4">
+				<li key={item.name}>
 					<Anchor
 						href={item.contentUrl}
-						className={`flex items-center no-underline w-full px-4 py-1 ${
+						className={`flex items-center no-underline w-full p-4 ${
 							item.contentUrl &&
 							"justify-between hover:bg-gray-100/50 rounded-xl group"
 						}`}
@@ -52,7 +52,7 @@ const List: FC<Props> = (props) => {
 							<img 
 								src="/chevron_right.svg" 
 								alt="Shape of right arrow"
-								className="transition ease-in-out group-hover:-translate-x-2 duration-300"
+								className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
 							 />
 						)}
 					</Anchor>
