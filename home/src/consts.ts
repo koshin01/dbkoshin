@@ -84,13 +84,17 @@ export const MY_LINKS: Item[] = [
 		contentUrl: "https://github.com/koshin01",
 	},
 	{
+		name: "Hugging Face",
+		contentUrl: "https://huggingface.co/koshin2001",
+	},
+	{
 		name: "X",
 		contentUrl: "https://x.com/koshin2001",
 	},
 	{
 		name: "Wantedly",
 		contentUrl: "https://www.wantedly.com/id/koshin2001",
-	}
+	},
 ];
 
 export const NOTIFICATIONS: Item[] = [
