@@ -1,5 +1,5 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import BaseHead from "../components/BaseHead.tsx";
 import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -11,8 +11,10 @@ import {
 	MY_PROCUCTS,
 	MY_RECOMMENDS,
 	MY_TECH_WORDS,
-	SITE_DESCRIPTION,
 	SITE_TITLE,
+	SITE_DESCRIPTION,
+	SITE_FAVICON_IMAGE,
+	SITE_OG_IMAGE,
 } from "../consts";
 
 const { earthMovie = "/earth.gif" } = Astro.props;
@@ -24,7 +26,14 @@ const currentYear = today.getFullYear();
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE.ROOT} description={SITE_DESCRIPTION.ROOT} />
+		<BaseHead 
+			title={SITE_TITLE.ROOT} 
+			description={SITE_DESCRIPTION.ROOT}
+			faviconImage={SITE_FAVICON_IMAGE}
+			ogImage={SITE_OG_IMAGE}
+			canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+			generatorName={Astro.generator}
+		/>
 	</head>
 	<Body>
 		<Header />

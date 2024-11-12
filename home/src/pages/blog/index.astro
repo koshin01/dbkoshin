@@ -1,12 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import BaseHead from "../../components/BaseHead.astro";
+import BaseHead from "../../components/BaseHead.tsx";
 import Body from "../../components/Body.astro";
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 import List from "../../components/List";
 import Main from "../../components/Main.tsx";
-import { type Item, SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { 
+	type Item, 
+	SITE_TITLE,
+	SITE_DESCRIPTION,
+	SITE_FAVICON_IMAGE,
+	SITE_OG_IMAGE,
+} from "../../consts";
 
 const blogHome = {
 	name: "Blog",
@@ -27,7 +33,14 @@ const postItems: Item[] = posts.map((post) => ({
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE.BLOG} description={SITE_DESCRIPTION.BLOG} />
+		<BaseHead 
+			title={SITE_TITLE.ROOT} 
+			description={SITE_DESCRIPTION.ROOT}
+			faviconImage={SITE_FAVICON_IMAGE}
+			ogImage={SITE_OG_IMAGE}
+			canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+			generatorName={Astro.generator}
+		/>
 	</head>
 	<Body>
 		<Header subHome={blogHome} />

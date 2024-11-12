@@ -11,6 +11,8 @@ export const SITE_DESCRIPTION: Record<Pages, string> = {
 	ROOT: "koshin's homepage.",
 	BLOG: "koshin's tech blog.",
 };
+export const SITE_OG_IMAGE = "/favicon.png";
+export const SITE_FAVICON_IMAGE = "/favicon.png";
 
 export interface Image {
 	src: string;
