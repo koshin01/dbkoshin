@@ -1,0 +1,3 @@
+[submodule "home/src/components"]
+	path = home/src/components
+	url = https://github.com/koshin01/web_components.git
