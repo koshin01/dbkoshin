@@ -1,4 +1,5 @@
 {
     "files.autoSave": "afterDelay",
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "editor.defaultFormatter": "biomejs.biome"
 }
