@@ -1,6 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.tsx";
-import Body from "../components/Body.tsx";
 import Footer from "../components/Footer.tsx";
 import Header from "../components/Header.tsx";
 import List from "../components/List";
@@ -11,10 +10,10 @@ import {
 	MY_PROCUCTS,
 	MY_RECOMMENDS,
 	MY_TECH_WORDS,
-	SITE_TITLE,
 	SITE_DESCRIPTION,
 	SITE_FAVICON_IMAGE,
 	SITE_OG_IMAGE,
+	SITE_TITLE,
 } from "../consts";
 
 const { earthMovie = "/earth.gif" } = Astro.props;
@@ -35,8 +34,8 @@ const currentYear = today.getFullYear();
 			generatorName={Astro.generator}
 		/>
 	</head>
-	<Body>
-		<Header />
+	<div class="flex flex-col min-h-screen max-w-full prose lg:prose-lg">
+		<Header homeName="dbkoshin" client:load />
 		<Main>
 			<h1 class="sr-only h-0">This page introduces koshin's activities and thoughts.</h1>
 			<section class="text-center h-screen">
@@ -71,5 +70,5 @@ const currentYear = today.getFullYear();
 			</section>
 		</Main>
 		<Footer />
-	</Body>
+	</div>
 </html>

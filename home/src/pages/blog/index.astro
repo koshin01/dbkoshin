@@ -1,17 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.tsx";
-import Body from "../../components/Body.tsx";
 import Footer from "../../components/Footer.tsx";
 import Header from "../../components/Header.tsx";
 import List from "../../components/List";
 import Main from "../../components/Main.tsx";
-import { 
-	type Item, 
-	SITE_TITLE,
+import {
+	type Item,
 	SITE_DESCRIPTION,
 	SITE_FAVICON_IMAGE,
 	SITE_OG_IMAGE,
+	SITE_TITLE,
 } from "../../consts";
 
 const blogHome = {
@@ -42,8 +41,8 @@ const postItems: Item[] = posts.map((post) => ({
 			generatorName={Astro.generator}
 		/>
 	</head>
-	<Body>
-		<Header subHome={blogHome} />
+	<div class="flex flex-col min-h-screen max-w-full prose lg:prose-lg">
+		<Header homeName="dbkoshin" subHome={blogHome} client:load />
 		<Main>
 			<List items={postItems} />
 			<!-- <section>
@@ -65,5 +64,5 @@ const postItems: Item[] = posts.map((post) => ({
 			</section> -->
 		</Main>
 		<Footer />
-	</Body>
+	</div>
 </html>

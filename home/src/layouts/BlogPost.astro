@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.tsx";
-import Body from "../components/Body.tsx";
 import Footer from "../components/Footer.tsx";
 import FormattedDate from "../components/FormattedDate.tsx";
 import Header from "../components/Header.tsx";
@@ -29,8 +28,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			generatorName={Astro.generator}
 		/>
 	</head>
-	<Body>
-		<Header subHome={blogHome}/>
+	<div class="flex flex-col min-h-screen max-w-full prose lg:prose-lg">
+		<Header homeName="dbkoshin" subHome={blogHome} client:load />
 		<Main>
 			<article class="lg:w-8/12 lg:mx-auto">
 				<div>
@@ -56,5 +55,5 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</Main>
 		<Footer />
-	</Body>
+	</div>
 </html>
